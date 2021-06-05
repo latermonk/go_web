@@ -35,5 +35,5 @@ func main() {
 		c.JSON(http.StatusOK, data) // json的序列化
 	})
 
-	r.Run(":59099")
+	r.Run(":49099")
 }
