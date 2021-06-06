@@ -29,7 +29,7 @@ func main() {
 	r.GET("/another_json", func(c *gin.Context) {
 		data := msg{
 			"小王子123",
-			"Hello golang!",
+			"Hello golang!456",
 			18,
 		}
 		c.JSON(http.StatusOK, data) // json的序列化
