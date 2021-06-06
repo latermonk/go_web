@@ -11,7 +11,7 @@ func main() {
 	r := gin.Default()
 	r.LoadHTMLFiles("./login.html", "./index.html")
 
-	r.GET("/login", func(c *gin.Context) {
+	r.GET("/login", func(c *gin. Context) {
 		c.HTML(http.StatusOK, "login.html", nil)
 	})
 	// /login post
