@@ -28,7 +28,7 @@ func main() {
 	}
 	r.GET("/another_json", func(c *gin.Context) {
 		data := msg{
-			"小王子",
+			"小王子123",
 			"Hello golang!",
 			18,
 		}
