@@ -50,9 +50,54 @@ func main() {
 	})
 
 
-	//r.NoRoute("", func(context *gin.Context) {
-	//
+	r.NoRoute(func(c *gin.Context) {
+		c.JSON(http.StatusNotFound, gin.H{
+			"message" : "Page NOT FOUND",
+		})
+	})
+
+	//vidoe  shop index detail
+	//r.GET("/video/index", func(c *gin.Context) {
+	//	c.JSON(http.StatusOK, gin.H{
+	//		"msg": "/video/index",
+	//	})
 	//})
+	//r.GET("/video/xx", func(c *gin.Context) {
+	//	c.JSON(http.StatusOK, gin.H{
+	//		"msg": "/video/xx",
+	//	})
+	//})
+	//r.GET("/video/oo", func(c *gin.Context) {
+	//	c.JSON(http.StatusOK, gin.H{
+	//		"msg": "/video/oo",
+	//	})
+	//})
+
+
+	videoGroup := r.Group("/video")
+	{
+		videoGroup.GET("/index", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"msg": "/video/index"})
+		})
+		videoGroup.GET("/xx", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"msg": "/video/xx"})
+		})
+		videoGroup.GET("/oo", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"msg": "/video/oo"})
+		})
+		//videoGroup.
+	}
+
+
+
+
+
+
+	r.GET("/shop/index", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "/shop/index",
+		})
+	})
 
 	r.Run(":9999")
 }
