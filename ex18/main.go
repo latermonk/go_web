@@ -16,8 +16,10 @@ func indexHnadler(c *gin.Context){
 
 func m1(c *gin.Context) {
 	fmt.Println("IN m1 ... ")
-	
+
 	start := time.Now()
+
+
 	c.Set("name", "xiao wang zhi")
 	c.Next()
 
