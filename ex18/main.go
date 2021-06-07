@@ -32,17 +32,37 @@ func m1(c *gin.Context) {
 
 func m2(c *gin.Context) {
 	fmt.Println("IN m2 ... ")
-	c.Next()
+	//c.Next()
+	c.Abort()
+	return
 	fmt.Println("Out m2 ...")
 }
 
 
+func authMiddleware(c *gin.Context){
+	//login or not
+
+}
+
+
+//func authMiddleware(doCheck bool)gin.HandlerFunc{
+//	//db
+//	//
+//	return func(c *gin.Context) {
+//		//logic
+//		if doCheck{
+//
+//		}else {
+//			c.Next()
+//		}
+//	}
+//}
 
 func main() {
 	r := gin.Default()
 
 	//global register middleware
-	r.Use(m1, m2)
+	r.Use(m1, m2, authMiddleware)
 
 	//r.GET("/index", m1, m2,  indexHnadler)
 	r.GET("/index",  indexHnadler)
