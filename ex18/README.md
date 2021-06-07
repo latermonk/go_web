@@ -10,3 +10,6 @@ VIP校验  权限控制
 
 
 ```
+
+![gin中间件执行顺序](gin%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png)
+
