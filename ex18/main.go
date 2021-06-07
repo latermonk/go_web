@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
+	"time"
 )
 
 func indexHnadler(c *gin.Context){
@@ -14,6 +16,12 @@ func indexHnadler(c *gin.Context){
 
 func m1(c *gin.Context) {
 	fmt.Println("IN m1 ... ")
+	start := time.Now()
+	c.Set("name", "xiao wang zhi")
+	c.Next()
+
+	cost := time.Since(start)
+	log.Println(cost)
 }
 
 
