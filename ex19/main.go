@@ -4,8 +4,9 @@ import "github.com/gin-gonic/gin"
 
 func main() {
 
-	gin.ForceConsoleColor()
+	//gin.ForceConsoleColor()
 	//gin.DisableConsoleColor()
+
 
 
 	r := gin.Default()
